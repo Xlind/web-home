@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Web home</title>
+	<link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./public/css/common.css">
+</head>
+
+<body id="body">
+<div id="particle"></div>
+<nav class="navbar navbar-default" role="navigation" id="topTb">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<a  class="navbar-brand" id="Homepage" href="/">&nbsp;欢迎来到小铛铛个人网站~&nbsp;</a>
+			</div>
+			<div>
+				<p class="navbar-text" id="whereUFrom"></p>
+			</div>
+			<button type="button" class="btn btn-default navbar-btn navbar-right" id="topId" onclick="showIP()">
+				显示你的ID
+			</button>
+		</div>
+</nav>
+<div class="outLeft-Png">
+	<img src="./public/images/xiaoyy1.png">
+</div>
+<div class="outRight-Png">
+		<img src="./public/images/xiaodd1.png">
+</div>
+<div id="xyyId" onclick="gotoxyyView()">
+	<img src="./public/images/xiaoyy2.png">
+</div>
+<div id="xddId" onclick="gotoxddView()">
+	<img src="./public/images/xiaodd2.png">
+</div>
+<div class="container" id="container">
+	    <div class="row" id="xddView">
+				<h2 class="contain-h">小铛铛作品</h2>
+			</div>
+			<div class="row">
+               {{each comments}}
+				<div class="contain-xdd">
+				<a href="{{$value.url}}" target="_blank">
+					<div class="cn"><img src="{{$value.img}}">
+						<div class="xyy-work"><br>
+							<h3>{{$value.msgheader}}</h3>
+							<h5>{{$value.msg1}}</h5>
+							<h5>{{$value.msg2}}</h5>
+						</div>
+					</div>
+				</a>
+				</div>
+                {{/each}}
+			</div>
+	<div class="row" id="xyyView">
+		<h2 class="contain-h">小耶耶作品</h2>
+	</div>
+	<div class="row">
+	    <div class="contain-xyy">
+			<a href="./public/app/bs.apk">
+			<div class="cn"><img src="./public/images/xyy-1.png">
+				<div class="xyy-work">
+					<h2>毕业设计app下载</h2>
+					<h4>（1.8M）</h4>
+				</div>
+			</div>
+		</a>
+	    </div>
+		<div class="contain-xyy">
+		<a href="./public/app/mqttchatlite.apk">
+			<div class="cn"><img src="./public/images/xyy-2.png">
+				<div class="xyy-work">
+					<h2>mqtt轻聊下载</h2>
+					<h4>（840k）</h4>
+					<h4>功能：实时聊天</h4>
+				</div>
+			</div>
+		</a>
+		</div>
+		<div class="contain-xyy">
+		<a href="./public/app/networkcancer.apk">
+			<div class="cn"><img src="./public/images/xyy-3.png">
+				<div class="xyy-work">
+					<h2>网络毒瘤下载</h2>
+					<h4>（963k）</h4>
+					<h4>功能：网络轰炸</h4>
+				</div>
+			</div>
+		</a>
+	</div>
+	</div>
+	<div class="row">
+	<div class="andContent-h"><h3>Android端打开APP:</h3></div>
+	<div class="andContent">
+		<div><a href="weixin://"><img src="./public/images/weixin.png" alt="微信"></a></div>
+		<div><a href="mqq://"><img src="./public/images/qq.png" alt="qq"></a></div>
+		<div><a href="taobao://"><img src="./public/images/taobao.png" alt="淘宝"></a></div>
+		<div><a href="openjd://"><img src="./public/images/jingdong.png" alt="京东"></a></div>
+		<div><a href="zhihu://"><img src="./public/images/zhihu.png" alt="知乎"></a></div>
+		<div><a href="sinaweibo://browser/"><img src="./public/images/weibo.png" alt="微博"></a></div>
+		<div><a href="ofoapp://"><img src="./public/images/ofo.png" alt="ofo小黄车"></a></div>
+		<div><a href="orpheus://"><img src="./public/images/wangyiyun.png" alt="网易云音乐"></a></div>
+		<div><a href="kugou://"><img src="./public/images/kugou.png" alt="酷狗音乐"></a></div>
+		<div><a href="hyclient://"><img src="./public/images/my.png" alt="MyApp"></a></div>
+	</div>
+	</div>
+</div>
+	<div id="version"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="./public/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./public/js/sketch.min.js"></script>
+	<script src="./public/js/Particle.js"></script>
+	
+	<!--获取ip后台地址-->
+    <script src='http://pv.sohu.com/cityjson?ie=utf-8'></script>
+	<script>
+    function showIP() {
+        var ip = returnCitySN.cip;
+        var city = returnCitySN.cname;
+        var text = '你来自 ' + ip + ', 城市: ' + city + '。';
+        $('#whereUFrom').text(text);
+    }
+	</script>
+</body>
+
+</html>
