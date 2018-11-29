@@ -12,7 +12,7 @@ app.use('/node_modules/', express.static(path.join(__dirname, './node_modules/')
 app.engine('html', require('express-art-template'))
 
 var comments = [{
-        url: '/a',
+        url: 'http://111.230.232.189:8000',
         img: './public/images/tianwen.png',
         msgheader: '天文科普网',
         msg1: '美工+前端：小铛铛',
@@ -20,7 +20,7 @@ var comments = [{
 
     },
     {
-        url: '/b',
+        url: 'http://111.230.232.189:8001',
         img: './public/images/dr-jisuanjixi.png',
         msgheader: '广东东软学院计算机系网(账号:AAA,密码:123)',
         msg1: '美工+前端：小铛铛&小组',
@@ -28,7 +28,7 @@ var comments = [{
 
     },
     {
-        url: '/c',
+        url: 'http://111.230.232.189:8002',
         img: './public/images/tianqi.png',
         msgheader: '天气查询网',
         msg1: '美工：未完善',
@@ -44,7 +44,7 @@ var comments = [{
 
     },
     {
-        url: '/gulugulu',
+        url: 'http://111.230.232.189:8003',
         img: './public/images/gulugulu-fm.png',
         msgheader: 'GULUGULU 视频直播网站',
         msg1: '美工：Melonmelon',
@@ -65,6 +65,6 @@ app.get('/op', function (req, res) {
 })
 
 //监听端口
-app.listen(3000, function () {
+app.listen(80, function () {
     console.log('express is running...')
 })
