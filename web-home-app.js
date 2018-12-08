@@ -49,6 +49,13 @@ var comments = [{
         msgheader: 'GULUGULU 视频直播网站',
         msg1: '美工：Melonmelon',
         msg2: '前端+后台：小铛铛'
+    },
+    {
+        url: 'http://111.230.232.189:8004',
+        img: './public/images/animal-fm.png',
+        msgheader: 'Animal 动物守护之家',
+        msg1: '美工：小铛铛',
+        msg2: '前端+后台：小铛铛'
     }
 ]
 
